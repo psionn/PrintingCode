@@ -7,7 +7,7 @@ void setup () {
   
   smooth();
   colorMode(HSB, 1,1,1);
-  graphic = createGraphics(5100, 3300, P2D);
+  graphic = createGraphics(3300, 5100, P2D);
   background(0);
   myPath = new WanderingPath(graphic);
   println(myPath.steps + " " + myPath.path.size());
@@ -24,8 +24,9 @@ background(0);
 }  
 
 void mousePressed() {
-  graphic = createGraphics(5100, 3300, P2D);
+  graphic = createGraphics(3300, 5100, P2D);
   myPath = new WanderingPath(graphic);
+  myPath.render();
 }
 void keyPressed() {
  graphic.save("image.tif"); 

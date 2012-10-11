@@ -6,12 +6,11 @@ class WanderingPath {
   PVector startingPos, endingPos;
   PGraphics surface;
   TColor col = TColor.newHSV(map(190, 0, 360, 0, 1), map(90, 0, 360, 0, 1), map(90, 0, 360, 0, 1));
-  ColorTheoryStrategy s = new AnalogousStrategy();
+  ColorTheoryStrategy s = new SplitComplementaryStrategy();
   ColorList colList = ColorList.createUsingStrategy(s, col);
   ColorList moreColors = new ColorRange(colList).addBrightnessRange(0.8, 1).getColors(null, 106, 0.05);
   int steps;
   ArrayList<PVector> path = new ArrayList<PVector>();
-
   WanderingPath(PGraphics canvas) {
 
     println(col.hue() + " " + col.saturation() + " " + col.brightness());
